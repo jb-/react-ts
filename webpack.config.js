@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   // change to .tsx if necessary
   entry: './src/index.tsx',
@@ -27,5 +29,7 @@ module.exports = {
   devtool: "source-map",
   devServer: {
     port: 4004,
-  }
+    publicPath: '/dist', // webpack output; DOESN'T HAVE TO EXIST
+    // contentBase: path.join(__dirname, '/dist'), // all the statics include bundles; overwrite publicPath; SHOULD EXIST
+  },
 };
