@@ -1,10 +1,9 @@
-var path = require('path');
-
 module.exports = {
   // change to .tsx if necessary
   entry: './src/index.tsx',
   output: {
-    filename: './bundle.js'
+    filename: 'bundle.js',
+    // path: path.join(process.cwd(), 'dist') // default
   },
   resolve: {
     // changed from extensions: [".js", ".jsx"]

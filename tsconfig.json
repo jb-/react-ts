@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",        // path to output directory
+    // "outDir": "./build",        // path to output directory: it doesn't work!!!!
     "sourceMap": true,          // allow sourcemap support
     "strictNullChecks": true,   // enable strict null checks as a best practice
     "module": "es6",            // specify module code generation
@@ -13,3 +13,4 @@
     "./src/"
   ]
 }
+// NOTE: not all the compilerOptions work with ts-loader
