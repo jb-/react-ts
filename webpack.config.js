@@ -12,13 +12,29 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".jsx"]
   },
   module: {
-    rules: [
-      // changed from { test: /\.jsx?$/, use: { loader: 'babel-loader' }, exclude: /node_modules/ },
-      { test: /\.(t|j)sx?$/, use: { loader: 'ts-loader' }, exclude: /node_modules/ },
-
-      // addition - add source-map support
-      { enforce: "pre", test: /\.js$/, exclude: /node_modules/, loader: "source-map-loader" }
-    ]
+    rules: [{
+      test: /\.(t|j)sx?$/,
+      use: {
+        loader: 'ts-loader',
+      },
+      exclude: /node_modules/,
+    }, {
+      test: /\.css$/i,
+      use: [
+        'css-modules-typescript-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+          },
+        },
+      ]
+    }, {
+      enforce: "pre",
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "source-map-loader"
+    }]
   },
   // prevent bundling of certain imported packages and instead retrieve these external dependencies at runtime
   externals: {
