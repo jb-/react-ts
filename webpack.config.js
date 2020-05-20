@@ -19,17 +19,6 @@ module.exports = {
       },
       exclude: /node_modules/,
     }, {
-      test: /\.css$/i,
-      use: [
-        'css-modules-typescript-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-          },
-        },
-      ]
-    }, {
       enforce: "pre",
       test: /\.js$/,
       exclude: /node_modules/,
